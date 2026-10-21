@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Для Златы </title>
+<style>
+body {
+  margin: 0;
+  background: #c9b6f0;
+  font-family: Arial, sans-serif;
+  color: #68468c;
+  text-align: center;
+}
+.screen {
+  display: none;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.active {
+  display: flex;
+}
+h1 {
+  font-size: 35px;
+  cursor: pointer;
+}
+button {
+  margin: 20px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 25px;
+  background: #8061ac;
+  color: white;
+  font-size: 17px;
+}
+.envelope {
+  background: #f8eaff;
+  width: 280px;
+  height: 175px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  cursor: pointer;
+  border: 2px solid #9b7ac6;
+}
+.name {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.seal {
+  position: absolute;
+  top: 65px;
+  left: 125px;
+  background: #e53950;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.stamp {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 2px dotted #8061ac;
+  padding: 8px;
+  background: #e2d3fa;
+}
+
+.paper {
+  background: white;
+  color: #393044;
+  padding: 25px;
+  max-width: 400px;
+  line-height: 1.8;
+  font-size: 19px;
+}
+
+#scare {
+  background: black;
+  color: white;
+}
+
+.face {
+  font-size: 130px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="one" class="screen active">
+  <h1 onclick="go('two')">
+    у меня для тя<br>кое-что есть
+  </h1>
+  <p>нажми на надпись ♡</p>
+</div>
+
+<div id="two" class="screen">
+  <h2>💌</h2>
+  <div class="envelope" onclick="go('three')">
+    <div class="stamp">🐈</div>
+    <div class="seal"></div>
+    <div class="name">злате</div>
+  </div>
+  <p>нажми на конверт</p>
+</div>
+
+<div id="three" class="screen">
+  <div class="paper">
+    привеи, сатоши рыбная котлета с заветком,
+    поздравляю тебя с днём рождения.
+    желаю тебе счастья, здоровья, любви с ждимой,
+    успехов в новых начинаниях и всего хорошего!!
+  </div>
+  <button onclick="go('four')">продолжить</button>
+</div>
+
+<div id="four" class="screen">
+  <h1>АХАХАХАХА</h1>
+  <div class="face">👹</div>
+  <button onclick="go('five')">ладно, пока </button>
+</div>
+
+<div id="five" class="screen">
+  <h1>с днём рождения </h1>
+</div>
+
+<script>
+function go(id) {
+  document.querySelectorAll('.screen').forEach(
+    s => s.classList.remove('active')
+  );
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
